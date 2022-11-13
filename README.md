@@ -1,9 +1,3 @@
-<p>
-
-</p>
-
-![tatar icon]()
-
 <h1 align="center">
     <img src="./src-tauri/icons/tatar_128x128.png" width=128 height=128/><br>
     tatar
