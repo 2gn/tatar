@@ -1,4 +1,4 @@
-use tauri::{generate_context, Builder, Manager, WebviewAttributes, WindowBuilder, WindowUrl};
+use tauri::{generate_context, generate_handler, Builder, WindowBuilder, WindowUrl, Manager};
 use url::Url;
 
 // #![cfg_attr(
@@ -16,19 +16,19 @@ fn log_to_console(msg: &str) {
 fn main() {
     Builder::default()
         .setup(|app| {
-            let window = tauri::WindowBuilder::new(
+            WindowBuilder::new(
                 app,
                 "label",
-                tauri::WindowUrl::External(Url::parse("https://music.youtube.com").unwrap()),
+                WindowUrl::External(Url::parse("https://music.youtube.com").unwrap()),
             )
             .user_agent(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
             )
             .build()?;
-            // app.get_window("main").unwrap().close();
+            app.get_window("main").unwrap().hide();
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![log_to_console])
+        .invoke_handler(generate_handler![log_to_console])
         .run(generate_context!())
         .expect("error while running tauri application");
 }
