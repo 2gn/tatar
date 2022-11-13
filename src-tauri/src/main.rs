@@ -21,9 +21,7 @@ fn main() {
                 "label",
                 WindowUrl::External(Url::parse("https://music.youtube.com").unwrap()),
             )
-            .user_agent(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
-            )
+            .user_agent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:106.0) Gecko/20100101 Firefox/106.0")
             .build()?;
             app.get_window("main").unwrap().hide();
             Ok(())

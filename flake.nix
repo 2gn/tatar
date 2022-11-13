@@ -35,7 +35,9 @@
             darwin.apple_sdk.frameworks.WebKit
             rust-bin.beta.latest.default
           ];
-          shellHook = '''';
+          shellHook = ''
+            CI=true
+          '';
         };
       }
     );
