@@ -36,7 +36,7 @@
             rust-bin.beta.latest.default
           ];
           shellHook = ''
-            CI=true
+            export CI=true
           '';
         };
       }
