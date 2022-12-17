@@ -7,6 +7,10 @@
     A youtube music client built with tauri.
 </h4>
 
+## download
+This project is a work-in-progress. Stability won't be promised.
+You can download pre-release from [release section]("https://github.com/2gn/tatar/releases")
+
 ## screenshots
 
 ![screenshot](./screenshots/1.png)
