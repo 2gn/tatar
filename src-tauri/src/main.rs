@@ -2,7 +2,6 @@
 //     generate_context, generate_handler, Builder, LogicalSize, Size, WindowBuilder, WindowUrl, Menu
 // };
 use tauri::*;
-use url::Url;
 
 // #![cfg_attr(
 //     all(not(debug_assertions), target_os = "windows"),
@@ -16,25 +15,13 @@ fn log_to_console(msg: &str) {
     println!("{}", msg);
 }
 
-fn logical_size(width: f64, height: f64) -> Option<Size> {
-    Some(Size::Logical(LogicalSize { width, height }))
-}
-
 fn main() {
     Builder::default()
-        .setup(|app| {
-            Ok(())
-        })
         .invoke_handler(generate_handler![log_to_console])
-        .menu(
-            Menu::with_items([
-                MenuItem::SelectAll.into(),
-                CustomMenuItem::new(
-                    "toggle-dev-tools",
-                    "Toggle DevTools"
-                ).into()
-            ])
-        )
+        .menu(Menu::with_items([
+            MenuItem::SelectAll.into(),
+            CustomMenuItem::new("toggle-dev-tools", "Toggle DevTools").into(),
+        ]))
         .on_window_event(|event| match event.event() {
             WindowEvent::Focused(focused) => {
                 if !focused {
@@ -42,9 +29,6 @@ fn main() {
                 } else {
                     println!("focused");
                 }
-            }
-            WindowEvent::Destroyed => {
-
             }
             _ => {}
         })
