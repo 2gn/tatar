@@ -28,12 +28,13 @@
             fontconfig
             openssl
             zlib
+            rust-bin.beta.latest.default
+          ] ++ lib.optionals stdenv.isDarwin [
             libiconv
             darwin.apple_sdk.frameworks.CoreGraphics
             darwin.apple_sdk.frameworks.Cocoa
             darwin.apple_sdk.frameworks.Foundation
             darwin.apple_sdk.frameworks.WebKit
-            rust-bin.beta.latest.default
           ];
           shellHook = ''
             export CI=true
