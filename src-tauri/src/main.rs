@@ -70,6 +70,18 @@ fn main() {
                 .unwrap()
                 .show()
                 .expect("failed to show"),
+            SystemTrayEvent::MenuItemClick { id, .. } => {
+                match id.as_str() {
+                    "quit" => {
+                        std::process::exit(0);
+                    }
+                    "hide" => {
+                        let window = app.get_window("main").unwrap();
+                        window.hide().unwrap();
+                    }
+                    _ => {}
+                }
+            },
             _ => {}
         })
         .run(generate_context!())

@@ -21,6 +21,8 @@ Pull requests are welcome. Please send some.
 
 ![screenshot](./screenshots/2.png)
 
+![screenshot](./screenshots/3.png)
+
 ## FAQ
 
 ### I cannot quit the app
