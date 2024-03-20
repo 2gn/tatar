@@ -14,6 +14,8 @@ dist-ssr
 
 flake.lock
 
+flake.locky
+
 yarn.lock
 
 # Editor directories and files
