@@ -8,11 +8,15 @@
   },
   "package": {
     "productName": "tatar",
-    "version": "0.0.1"
+    "version": "0.0.2"
   },
   "tauri": {
     "allowlist": {
       "all": true
+    },
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
     },
     "bundle": {
       "active": true,
@@ -62,13 +66,6 @@
         "title": "tatar",
         "decorations": true,
         "fileDropEnabled": true
-      },
-      {
-        "label": "settings",
-        "url": "http://localhost:1420",
-        "minWidth": 320.0,
-        "title": "Settings",
-        "visible": true
       }
     ]
   }
