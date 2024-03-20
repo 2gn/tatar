@@ -59,7 +59,16 @@
         "url": "https://music.youtube.com",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0",
         "minWidth": 320.0,
-        "title": "tatar"
+        "title": "tatar",
+        "decorations": true,
+        "fileDropEnabled": true
+      },
+      {
+        "label": "settings",
+        "url": "http://localhost:1420",
+        "minWidth": 320.0,
+        "title": "Settings",
+        "visible": true
       }
     ]
   }
