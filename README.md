@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="./src-tauri/icons/tatar.png" width=128 height=128/><br>
+    <img src="./src-tauri/icons/icon.png" width=128 height=128/><br>
     tatar
 </h1>
 
