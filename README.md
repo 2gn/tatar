@@ -7,6 +7,12 @@
     A youtube music client built with tauri.
 </h4>
 
+## Features
+Slightly less memory usage compared to other YouTube music clients that displays https://music.youtube.com as their interface.
+
+The app is electron-free so the installation size will be much smaller.
+
+ 
 ## Download
 You can download executables from [releases]("https://github.com/2gn/tatar/releases")
 

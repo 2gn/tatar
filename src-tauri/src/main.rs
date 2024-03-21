@@ -25,16 +25,16 @@ fn main() {
 
     let system_tray = SystemTray::new().with_menu(tray_menu);
 
-    // let settings_button_injector_js = "
-    // const open_settings = new Event('open-settings');
-    // let top_bar = document.getElementsByClassName('center-content style-scope ytmusic-nav-bar')[0];
-    // let settings_button = document.createElement('button');
-    // settings_button.innerText = 'Settings';
-    // settings_button.addEventListener('click', (event) => {;
-    //     window.dispatchEvent('open-settings');
-    // });
-    // top_bar.prepend(settings_button);
-    // ";
+    let settings_button_injector_js = "
+    const open_settings = new Event('open-settings');
+    let top_bar = document.getElementsByClassName('center-content style-scope ytmusic-nav-bar')[0];
+    let settings_button = document.createElement('button');
+    settings_button.innerText = 'Settings';
+    settings_button.addEventListener('click', (event) => {;
+        window.dispatchEvent('open-settings');
+    });
+    top_bar.prepend(settings_button);
+    ";
 
     Builder::default()
         .plugin(tauri_plugin_single_instance::init(|app, argv, cwd| {
@@ -45,22 +45,22 @@ fn main() {
         .setup(|app| {
             #[cfg(debug_assertions)]
             {
-                let main_window = app.get_window("main").unwrap();
-                // let handle = app.handle();
-
-                // main_window
-                //     .eval(&settings_button_injector_js)
-                //     .expect("failed to run the script");
-
-                // app.listen_global("open-settings", move |_| {
-                //     handle
-                //         .get_window("settings")
-                //         .unwrap()
-                //         .show()
-                //         .expect("could not show settings window");
-                // });
+                let handle = app.handle();
+                let id = app.listen_global("single-instance", move |_| {
+                    handle
+                        .get_window("main")
+                        .unwrap()
+                        .show()
+                        .expect("could not show main window");
+                });
+                app.unlisten(id);
             }
             Ok(())
+        })
+        .on_page_load(|window, _| {
+            window
+                .eval(settings_button_injector_js)
+                .expect("could not inject javascript")
         })
         .on_window_event(|event| match event.event() {
             WindowEvent::CloseRequested { api, .. } => {

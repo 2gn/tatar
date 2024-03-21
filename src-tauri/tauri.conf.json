@@ -59,6 +59,15 @@
     },
     "windows": [
       {
+        "label": "settings",
+        "fullscreen": false,
+        "width": 800,
+        "height": 600,
+        "resizable": false,
+        "title": "Settings",
+        "visible": false
+      },
+      {
         "label": "main",
         "url": "https://music.youtube.com",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0",
