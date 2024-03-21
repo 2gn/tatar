@@ -14,8 +14,6 @@ dist-ssr
 
 flake.lock
 
-yarn.lock
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,3 +24,6 @@ yarn.lock
 *.njsproj
 *.sln
 *.sw?
+
+.yarn/unplugged
+.yarn/build-state.yml
