@@ -12,14 +12,24 @@ Slightly less memory usage compared to other YouTube music clients that displays
 
 The app is electron-free so the installation size will be much smaller.
 
+Runs natively on wayland
+
  
 ## Download
 You can download executables from [releases]("https://github.com/2gn/tatar/releases")
 
-## Contributions
-Feel free to create some issues. I'll try my best to make the situation better.
+## Building
+### Debian
+I had to install these additional packages system-wide
+* libssl-dev
+* libwebkit2gtk-4.0-dev
+* libjavascriptcoregtk-4.0-dev
 
-Pull requests are welcome. Please send some.
+## Contributions
+Since YouTube Music itself is feature-complete as a web app, desktop application is not really needed. Still, there are some ideas:
+* Custom CSS Injection
+    * Ability to apply dracula theme to YouTube Music (I guess other ytm desktop applications already have this)
+
 
 ## Screenshots
 
@@ -32,6 +42,5 @@ Pull requests are welcome. Please send some.
 ## FAQ
 
 ### I cannot quit the app
-On windows, from the system tray, right-click on the tatar icon and select `Quit`
+On windows and Linux, from the system tray, right-click on the tatar icon and select `Quit`
 
-On MacOS, I don't know (I don't have MacOS to test this on, sorry). Open Activity Monitor, find tatar and quit it.
