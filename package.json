@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.1.0",
+    "@tauri-apps/cli-darwin-arm64": "^2.2.7",
     "@vitejs/plugin-vue": "^3.0.1",
     "vite": "^3.0.2"
   }
