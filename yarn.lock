@@ -117,6 +117,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tauri-apps/cli-darwin-arm64@npm:^2.2.7":
+  version: 2.2.7
+  resolution: "@tauri-apps/cli-darwin-arm64@npm:2.2.7"
+  checksum: 10c0/82855dd8a57b2f288d20253e05cd9756d856efba06e00cb305dd23c0c3c6e31313de311d1ec8e270354a81c16817cdeb7ec828cc9c6a003ef8317823979f9877
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
 "@tauri-apps/cli-darwin-x64@npm:1.5.11":
   version: 1.5.11
   resolution: "@tauri-apps/cli-darwin-x64@npm:1.5.11"
@@ -1440,6 +1448,7 @@ __metadata:
   dependencies:
     "@tauri-apps/api": "npm:^1.1.0"
     "@tauri-apps/cli": "npm:^1.1.0"
+    "@tauri-apps/cli-darwin-arm64": "npm:^2.2.7"
     "@vitejs/plugin-vue": "npm:^3.0.1"
     vite: "npm:^3.0.2"
     vue: "npm:^3.2.37"
