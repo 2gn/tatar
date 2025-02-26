@@ -7,6 +7,9 @@
     A youtube music client built with tauri.
 </h4>
 
+# IMPORTANT NOTES
+This project is deprecated, and I'm working on newer version with latest tauri. You can still compile and run the app.
+
 ## Features
 Slightly less memory usage compared to other YouTube music clients that displays https://music.youtube.com as their interface.
 
